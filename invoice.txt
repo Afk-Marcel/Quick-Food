@@ -1,0 +1,20 @@
+Order number: 1141
+Customer: Marcel
+Email: mjgreyling@icloud.com
+Phone number: 0822278664
+Location: Cape Town
+
+You have ordered the following from Burgers in Cape Town:
+
+1 x Pepperoni pizza (R78.00)
+2 x Hawaiian pizza (R82.00)
+
+Special instructions: none
+
+Total: R242.00
+
+Miranda Metcalfe is nearest to the restaurant and will be delivering your order to you at:
+
+27 oak str
+
+If you need to contact the restaurant, their number is 098 765 4321.
