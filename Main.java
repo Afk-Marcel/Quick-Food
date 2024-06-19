@@ -81,7 +81,7 @@ public class Main {
     // Method to find a driver based on restaurant location.
     public static Driver findDriver(String restaurantLocation) {
         List<Driver> drivers = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("driver-info.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("drivers.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(", ");
@@ -97,8 +97,8 @@ public class Main {
         // Finding the most suitable driver based on load and location.
         Driver assignedDriver = null;
         for (Driver driver : drivers) {
-            if (driver.getLocation().equalsIgnoreCase(restaurantLocation)) {
-                if (assignedDriver == null || driver.getLoad() < assignedDriver.getLoad()) {
+            if (driver.getDriverLocation().equalsIgnoreCase(restaurantLocation)) {
+                if (assignedDriver == null || driver.getDriverLoad() < assignedDriver.getDriverLoad()) {
                     assignedDriver = driver;
                 }
             }
@@ -113,12 +113,12 @@ public class Main {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("invoice.txt"))) {
             // Writing order details to invoice file.
             writer.write("Order number: " + orderNumber + "\n");
-            writer.write("Customer: " + customer.getName() + "\n");
-            writer.write("Email: " + customer.getEmail() + "\n");
-            writer.write("Phone number: " + customer.getContactNumber() + "\n");
-            writer.write("Location: " + customer.getLocation() + "\n\n");
+            writer.write("Customer: " + customer.getCustomerName() + "\n");
+            writer.write("Email: " + customer.getCustomerEmail() + "\n");
+            writer.write("Phone number: " + customer.getCustomerContact() + "\n");
+            writer.write("Location: " + customer.getCustomerLocation() + "\n\n");
             writer.write(
-                    "You have ordered the following from " + restaurant.getName() + " in " + restaurant.getLocation() + ":\n\n");
+                    "You have ordered the following from " + restaurant.getRestaurantName() + " in " + restaurant.getRestaurantLocation() + ":\n\n");
             writer.write("1 x Pepperoni pizza (R78.00)\n");
             writer.write("2 x Hawaiian pizza (R82.00)\n\n");
             writer.write("Special instructions: " + restaurant.getSpecialInstructions() + "\n\n");
@@ -126,10 +126,10 @@ public class Main {
 
             // Checking if a driver is available and capable of delivering to customer's
             // location.
-            if (driver != null && customer.getLocation().equalsIgnoreCase(restaurant.getLocation())) {
+            if (driver != null && customer.getCustomerLocation().equalsIgnoreCase(restaurant.getRestaurantLocation())) {
                 writer
-                        .write(driver.getName() + " is nearest to the restaurant and will be delivering your order to you at:\n\n");
-                writer.write(customer.getAddress() + "\n\n");
+                        .write(driver.getDriverName() + " is nearest to the restaurant and will be delivering your order to you at:\n\n");
+                writer.write(customer.getCustomerAddress() + "\n\n");
                 writer.write("If you need to contact the restaurant, their number is 098 765 4321.\n");
             } else {
                 writer.write("Unfortunately, no drivers are available to deliver to your location.\n");
