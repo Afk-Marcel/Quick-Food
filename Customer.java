@@ -1,40 +1,41 @@
 package quickfood;
 
 public class Customer {
-	// Instance variables for the Customer class
-	private String name;
-	private String contactNumber;
-	private String address;
-	private String location;
-	private String email;
+    // Instance variables for the Customer class
 
-	// Constructor to initialise a Customer object with provided details.
-	public Customer(String name, String contactNumber, String address, String location, String email) {
-		this.name = name;
-		this.contactNumber = contactNumber;
-		this.address = address;
-		this.location = location;
-		this.email = email;
-	}
+    private String customerName;
+    private String customerContact;
+    private String customerAddress;
+    private String customerLocation;
+    private String customerEmail;
 
-	// Getter methods for retrieving customer attributes.
-	public String getName() {
-		return name;
-	}
+    // Constructor to initialise a Customer object with provided details.
+    public Customer(String customerName, String customerContact, String customerAddress, String customerLocation, String customerEmail) {
+        this.customerName = customerName;
+        this.customerContact = customerContact;
+        this.customerAddress = customerAddress;
+        this.customerLocation = customerLocation;
+        this.customerEmail = customerEmail;
+    }
 
-	public String getContactNumber() {
-		return contactNumber;
-	}
+    // Getter methods for retrieving customer attributes.
+    public String getCustomerName() {
+        return customerName;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getCustomerContact() {
+        return customerContact;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public String getCustomerAddress() {
+        return customerAddress;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getCustomerLocation() {
+        return customerLocation;
+    }
+
+    public String getCustomerEmail() {
+        return customerEmail;
+    }
 }
