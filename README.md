@@ -1,5 +1,18 @@
 # QuickFood Project
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Customer Class](#customer-class)
+  - [Driver Class](#driver-class)
+  - [Restaurant Class](#restaurant-class)
+  - [Main Class](#main-class)
+- [Usage](#usage)
+- [Requirements](#requirements)
+- [Example](#example)
+- [License](#license)
+
 ## Overview
 
 The QuickFood project is a Java application designed to handle food delivery operations. It involves three primary classes: `Customer`, `Driver`, and `Restaurant`, along with a `Main` class that orchestrates the functionality. The `Main` class collects customer and restaurant information, finds an appropriate driver, generates a random order number, and creates an invoice.
